@@ -42,7 +42,7 @@ const boardReducer = (state = initialState, action) => {
       const { boardID, listID } = action.payload;
       // console.log("Board Reducer: delete list: ", listID, boardID);
       const board = state[boardID];
-      const newLists = board.lists.filter((id) => id != listID);
+      const newLists = board.lists.filter((id) => id !== listID);
       board.lists = newLists;
       return { ...state, [boardID]: board };
     }

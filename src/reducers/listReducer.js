@@ -1,7 +1,6 @@
 import { CONSTANTS } from "./../actions/index";
 
-let listID = 2,
-  cardID = 6;
+
 
 const initialState = {
   "list-00": {
@@ -33,7 +32,7 @@ const listReducer = (state = initialState, action) => {
     }
 
     case CONSTANTS.DELETE_LIST: {
-      const { listID, boardID } = action.payload;
+      const { listID } = action.payload;
       // console.log("ListReducer: delete list: ", listID);
       const newState = state;
       delete newState[listID];
@@ -61,7 +60,6 @@ const listReducer = (state = initialState, action) => {
         droppableIdEnd,
         droppableIndexStart,
         droppableIndexEnd,
-        draggableId,
         type,
       } = action.payload;
 

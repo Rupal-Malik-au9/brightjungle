@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { addBoard, deleteBoard, setCurrentBoard } from "../actions";
+import { deleteBoard, setCurrentBoard } from "../actions";
 import styled from "styled-components";
+// import { addBoard, deleteBoard, setCurrentBoard } from "../actions";
 // import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import { Icon } from "@material-ui/core";
@@ -76,87 +77,88 @@ const CreateTitle = styled.h3`
   margin-top: 10px;
 `;
 
-const CreateInput = styled.input`
-  width: 300px;
-  height: 50px;
-  font-size: 20px;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 3px;
-  border: none;
-  outline-color: blue;
-  box-shadow: 0 2px 4px grey;
-  align-self: center;
-`;
+// const CreateInput = styled.input`
+//   width: 300px;
+//   height: 50px;
+//   font-size: 20px;
+//   padding: 10px;
+//   box-sizing: border-box;
+//   border-radius: 3px;
+//   border: none;
+//   outline-color: blue;
+//   box-shadow: 0 2px 4px grey;
+//   align-self: center;
+// `;
 
 //#2e7196; b0c4de;008B8B;2F4F4F
-const CreateButton = styled.button`
-  width: 70px;
-  height: 50px;
-  background-color: #2e7196;
-  color: white;
-  font-size: 17px;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  border: none;
-  outline-color: blue;
-  box-shadow: 0 2px 4px grey;
-  align-self: center;
-  margin: 10px;
-`;
+// const CreateButton = styled.button`
+//   width: 70px;
+//   height: 50px;
+//   background-color: #2e7196;
+//   color: white;
+//   font-size: 17px;
+//   padding: 10px;
+//   box-sizing: border-box;
+//   border-radius: 10px;
+//   border: none;
+//   outline-color: blue;
+//   box-shadow: 0 2px 4px grey;
+//   align-self: center;
+//   margin: 10px;
+// `;
 
-const Home = ({ boards, dispatch, match }) => {
+// const Home = ({ boards, dispatch, match }) => {
+const Home = () => {
   // console.log("Home: ", match.params);
-  dispatch(setCurrentBoard(null));
-  const [newBoardTitle, setNewBoardTitle] = useState("");
+  // dispatch(setCurrentBoard(null));
+  // const [newBoardTitle, setNewBoardTitle] = useState("");
 
-  const handleChange = (e) => {
-    if (e.target.value.length < 12) setNewBoardTitle(e.target.value);
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(addBoard(newBoardTitle));
-    setNewBoardTitle("");
-  };
+  // const handleChange = (e) => {
+  //   if (e.target.value.length < 12) setNewBoardTitle(e.target.value);
+  // };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   dispatch(addBoard(newBoardTitle));
+  //   setNewBoardTitle("");
+  // };
 
-  const handleDeleteBoard = (e, boardID) => {
-    // console.log("KKBoard: delete board: ", boardID);
-    dispatch(deleteBoard(boardID));
-  };
+  // const handleDeleteBoard = (e, boardID) => {
+  //   // console.log("KKBoard: delete board: ", boardID);
+  //   dispatch(deleteBoard(boardID));
+  // };
 
   const renderAllBoards = () => {
     // console.log("Home: Obj:", boards);
     // console.log("Home: ara:", Object.entries(boards));
-    return Object.entries(boards).map(([boardID, board]) => {
-      return (
-        <Thumbnail>
-          <a
-            href={`/boards/${boardID}`}
-            style={{
-              width: "100%",
-              height: "100%",
-              display: "flex",
-              textDecoration: "none",
-              textAlign: "center",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Title>Start planning</Title>
-          </a>
+    // return Object.entries(boards).map(([boardID, board]) => {
+    return (
+      <Thumbnail key="2">
+        <a
+          href={`/boards/board-00`}
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            textDecoration: "none",
+            textAlign: "center",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Title>Start planning</Title>
+        </a>
 
-          <div className="col-1">
-            <DeleteButton
-              style={{ zIndex: "10" }}
-              onClick={(e) => handleDeleteBoard(e, boardID)}
-            >
-              delete
+        {/* <div className="col-1">
+          <DeleteButton
+            style={{ zIndex: "10" }}
+            onClick={(e) => handleDeleteBoard(e, boardID)}
+          >
+            delete
             </DeleteButton>
-          </div>
-        </Thumbnail>
-      );
-    });
+        </div> */}
+      </Thumbnail>
+    );
+    // });
   };
 
   // const renderCreateNewBoard = () => {
@@ -187,8 +189,8 @@ const Home = ({ boards, dispatch, match }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  boards: state.boards,
-});
+// const mapStateToProps = (state) => ({
+//   boards: state.boards,
+// });
 
-export default connect(mapStateToProps)(Home);
+export default Home;

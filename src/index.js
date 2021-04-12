@@ -7,7 +7,6 @@ import Store from "./store";
 import "./index.css";
 import $ from "jquery";
 import { PersistGate } from "redux-persist/integration/react";
-import { HashRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 
 const { persistor, store } = Store();
@@ -15,9 +14,7 @@ const { persistor, store } = Store();
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <HashRouter>
-        <App />
-      </HashRouter>
+      <App />
     </PersistGate>
   </Provider>,
   document.getElementById("root")

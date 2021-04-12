@@ -83,7 +83,7 @@ import { UserContext } from "../App";
 import M from "materialize-css";
 import "./register.css";
 export default function Login() {
-  const { state, dispatch } = useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
   let history = useHistory();
 
   const [email, setEmail] = useState("");
@@ -207,7 +207,7 @@ export default function Login() {
             class="col-lg-4 left-image"
             style={{ width: "43rem" }}
             src={image}
-            alt="register-image"
+            alt="register"
           />
         </div>
       </div>

@@ -40,7 +40,7 @@ function Navbar() {
               <Link to="/signup" style={{ "fontSize": "19px", "fontWeight": "bold", "textDecoration": "none", color: "#175160" }}>SignUp</Link>
             </li>
             <li key="5" style={{ display: "inline", marginLeft: "0.8rem", color: "#175160", "fontWeight": "400" }}>
-              {state && (<Link onClick={() => logoutHandler()} style={{ "fontSize": "19px", "fontWeight": "bold", "textDecoration": "none", color: "#175160" }}>Logout</Link>)}
+              {state && (<span onClick={() => logoutHandler()} style={{ "fontSize": "19px", "fontWeight": "bold", "textDecoration": "none", color: "#175160" }}>Logout</span>)}
             </li>
             <li key="3" style={{ display: "inline", marginLeft: "0.8rem", color: "#175160", "fontWeight": "400" }}>
               <Link to='/profile' style={{ "fontSize": "19px", "fontWeight": "bold", "textDecoration": "none" }}>
@@ -48,7 +48,7 @@ function Navbar() {
                   <>
                     <img
                       src={state.profileImage}
-                      style={{ borderRadius: "50%", width: "7vh", height: "7vh" }}
+                      style={{ borderRadius: "50%", width: "7vh", height: "7vh" }} alt="profile"
                     />{" "}
                     {state.name && state.name.toUpperCase()}
                   </>

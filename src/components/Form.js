@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Card, Button, Icon } from "@material-ui/core";
+import { Card, Icon } from "@material-ui/core";
 import Textarea from "react-textarea-autosize";
 
 const Container = styled.div`

@@ -1,26 +1,24 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Link } from "react-router-dom";
 import "./profile.css";
 import { UserContext } from "../App";
 import M from "materialize-css";
 
 export default function Profile() {
-  const [allImages, setAllImages] = useState([]);
   const { state, dispatch } = useContext(UserContext);
   const [image, setImage] = useState("");
 
-  useEffect(() => {
-    fetch("http://localhost:2000/mypost", {
-      headers: {
-        Authorization: "Bearer " + localStorage.getItem("token"),
-      },
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        // console.log(result.post);
-        setAllImages(result.post);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:2000/mypost", {
+  //     headers: {
+  //       Authorization: "Bearer " + localStorage.getItem("token"),
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       // console.log(result.post);
+  //       setAllImages(result.post);
+  //     });
+  // }, []);
 
   useEffect(() => {
     if (image) {

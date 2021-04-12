@@ -4,7 +4,8 @@ import Create from "./Create";
 import { Droppable, Draggable } from "react-beautiful-dnd";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { editListTitle, deleteList, deleteCard } from "../actions";
+// import { editListTitle, deleteList, deleteCard } from "../actions";
+import { editListTitle, deleteList } from "../actions";
 import { Icon } from "@material-ui/core";
 
 const ListContainer = styled.div`
