@@ -1,0 +1,8 @@
+.login {
+    max-width: 400px;
+}
+.myCard {
+    display: flex;
+    justify-content: center;
+    min-height: 400px;
+}

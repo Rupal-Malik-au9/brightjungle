@@ -1,0 +1,41 @@
+.profile {
+  display: flex;
+}
+
+.image {
+  flex-grow: 1;
+}
+
+.profile-stats {
+  display: flex;
+  flex-grow: 3;
+  flex-direction: column;
+}
+
+.image-container {
+  width: 150px;
+  height: 150px;
+  margin: 50px;
+  border-radius: 50px;
+  transition: all 2s ease;
+}
+.image-container:hover {
+  width: 160px;
+  height: 160px;
+  border-radius: 50px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.gallery img {
+  width: 250px;
+  height: 300px;
+  margin-bottom: 5px;
+}
+
+.card-image img {
+  height: 400px;
+}
